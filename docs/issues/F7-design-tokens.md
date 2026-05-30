@@ -1,6 +1,6 @@
 # F7 — Design tokens: WhatsApp + Mercado Pago palettes & shadcn theme
 
-**Phase:** Foundation · **Priority:** P1 · **Estimate:** S · **Status:** Todo
+**Phase:** Foundation · **Priority:** P1 · **Estimate:** S · **Status:** In Review
 **Dependencies:** F1
 **Blocks:** F4, I2, B4
 
@@ -10,7 +10,7 @@ Visual fidelity to WhatsApp and Mercado Pago is non-negotiable for the demo. Get
 
 ## Acceptance Criteria
 
-- [ ] `tailwind.config.ts` extends theme with:
+- [x] `tailwind.config.ts` extends theme with: *(Tailwind v4: done via `@theme` in globals.css instead)*
   ```ts
   colors: {
     wa: {
@@ -33,11 +33,11 @@ Visual fidelity to WhatsApp and Mercado Pago is non-negotiable for the demo. Get
     }
   }
   ```
-- [ ] shadcn theme `globals.css` CSS variables use a warm neutral palette (zinc/stone) with `--primary` mapped to `#25D366`
-- [ ] A reference page at `/dev/tokens` (only mounted in dev) renders every token visually so we can eyeball them
-- [ ] A reference page at `/dev/wa-preview` renders a fake WhatsApp screen using the tokens — chat list + thread + reply box — to lock in visual fidelity before I2 is implemented
-- [ ] A reference page at `/dev/mp-preview` renders a fake Mercado Pago checkout — same purpose for B4
-- [ ] Both reference pages are linked from the home page in dev mode only
+- [x] shadcn theme `globals.css` CSS variables: zinc neutrals, `--primary` → `#25D366`
+- [x] `/dev/tokens` — color grid, typography, radius scale (dev-only, 404 in prod)
+- [x] `/dev/wa-preview` — full WhatsApp Web mockup: sidebar chat list + thread + reply box
+- [x] `/dev/mp-preview` — Mercado Pago checkout: header, payment method picker, card form, CTA
+- [x] Dev links on home page (only rendered when `NODE_ENV === "development"`)
 
 ## Logic (inferred — confirm or override)
 

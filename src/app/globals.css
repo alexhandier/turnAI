@@ -5,6 +5,25 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* ── WhatsApp palette ─────────────────────────────────── */
+  --color-wa-primary: #25D366;
+  --color-wa-header: #075E54;
+  --color-wa-bubble-in: #FFFFFF;
+  --color-wa-bubble-out: #DCF8C6;
+  --color-wa-bg: #ECE5DD;
+  --color-wa-tick: #34B7F1;
+
+  /* ── Mercado Pago palette ─────────────────────────────── */
+  --color-mp-primary: #009EE3;
+  --color-mp-primary-dark: #0070C0;
+  --color-mp-accent: #FFE600;
+  --color-mp-bg: #F5F5F5;
+
+  /* ── TurnAI brand ─────────────────────────────────────── */
+  --color-brand-primary: #25D366;
+  --color-brand-ink: #0F172A;
+
+  /* ── shadcn semantic tokens ───────────────────────────── */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
@@ -55,8 +74,8 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.741 0.194 154);   /* #25D366 WA green */
+  --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
@@ -66,7 +85,7 @@
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --ring: oklch(0.741 0.194 154 / 50%); /* primary at half opacity */
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);

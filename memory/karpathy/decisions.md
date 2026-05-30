@@ -2,6 +2,11 @@
 
 > Append-only. Newest at the top.
 
+## 2026-05-30 — F5+F6: Sim clock anchor = 2026-06-15 10:00 ART
+
+**Decision:** Fixed sim_clock anchor at 2026-06-15 10:00 ART (Monday, mid-month).
+**Rationale:** Mid-June gives 6 attended sessions so far in the month (dashboard target), a clean 14-day forward window for open slots, and "tomorrow" = Jun 16 for Camila's next turn. Seed takes ~15s on Neon pooled — acceptable for demo reset, no optimisation needed yet.
+
 ## 2026-05-30 — dotenv-cli for db:* scripts
 
 **Decision:** Added `dotenv-cli` dev dependency; db:push/generate/studio scripts use `dotenv -e .env.local -- drizzle-kit <cmd>`.
