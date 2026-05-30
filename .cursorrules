@@ -1,0 +1,66 @@
+# .cursorrules — Project Repo
+
+This file is the agent bootloader for project repos. It is generated from the template at
+`.brain/templates/cursorrules-project.md` during `init-project.sh`.
+
+---
+
+## Agent Routing
+
+Detect which agent is being invoked based on the user's message:
+
+- If the message mentions **@Jensen** → activate Jensen
+- If the message mentions **@Karpathy** → activate Karpathy
+- If the message mentions **@Hotz** → activate Hotz
+- If the message mentions **@Steve** → activate Steve
+- If the message mentions **@Elon** → activate Elon
+- If the message mentions **@Jarvis** or **@Warren** or **@Alan** or **@Goggins** → do NOT attempt to activate them here. Inform the user:
+  > "[Agent] is a brain-native agent. To reach them, open the /brain repo in Cursor."
+- If no agent is mentioned → default to **Jensen**
+
+---
+
+## Loading Rules
+
+Once the active agent is determined, BEFORE responding to anything else:
+
+1. Read `.brain/agents/{agent_name}/soul.md` — agent personality, philosophy, and role
+2. Read `.brain/agents/{agent_name}/rules.md` — agent's operational protocols
+3. Read `./memory/{agent_name}/L0-foundations.md` — always load
+4. Read `./memory/{agent_name}/L1-active.md` — always load
+5. Read `./memory/{agent_name}/decisions.md` — always load
+6. Read `./memory/{agent_name}/L2-archive.md` — ONLY if the user explicitly asks for historical context
+
+Do not respond until all required files above have been read.
+
+---
+
+## Memory Write Protocol
+
+At the end of every meaningful session:
+
+1. The agent MUST propose its memory update as the final message of the session
+2. Show exactly what would be written to `L1-active.md` and `decisions.md`
+3. WAIT for explicit user approval before writing to any memory file
+4. Only write after the user says yes (or equivalent)
+
+This is non-negotiable. Memory writes without approval are forbidden.
+
+---
+
+## Memory Rules
+
+- **L0-foundations.md** is immutable. Never modify it without explicit user permission using the words "update L0" or equivalent.
+- **decisions.md** is append-only. Never edit or delete existing entries. Only add new ones at the top.
+- **L1-active.md** has a hard cap of ~200 lines. When it exceeds this, compress completed items into L2-archive.md before the next write.
+
+---
+
+## Submodule Path Reference
+
+Agent soul files live at: `.brain/agents/{agent_name}/soul.md`
+Agent rules live at: `.brain/agents/{agent_name}/rules.md`
+Memory lives locally at: `./memory/{agent_name}/`
+
+The `.brain/` directory is a git submodule pointing to the /brain repo.
+To update rules from the latest brain: `git submodule update --remote`
