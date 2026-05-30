@@ -1,6 +1,6 @@
 # F2 — Provision Neon Postgres + Drizzle schema scaffolding
 
-**Phase:** Foundation · **Priority:** P1 · **Estimate:** S · **Status:** Todo
+**Phase:** Foundation · **Priority:** P1 · **Estimate:** S · **Status:** In Review (awaiting Neon provisioning)
 **Dependencies:** F1
 **Blocks:** F3, F5, F6, all module phases
 
@@ -10,13 +10,13 @@ We need a persistent database from day one because the demo's magic moment is *t
 
 ## Acceptance Criteria
 
-- [ ] Neon Postgres project provisioned (via Vercel Marketplace for one-click env vars)
-- [ ] `DATABASE_URL` set in Vercel + `.env.local`
-- [ ] Drizzle ORM installed (`drizzle-orm`, `drizzle-kit`, `postgres`)
-- [ ] `src/db/schema.ts` exists with the tables below
-- [ ] `pnpm db:push` runs and creates all tables
-- [ ] `src/db/index.ts` exports a typed `db` client usable from server components, route handlers, and server actions
-- [ ] A trivial server component or route can `SELECT 1` from the DB successfully on the deployed Vercel URL
+- [ ] Neon Postgres project provisioned (via Vercel Marketplace for one-click env vars) — **awaiting Alex**
+- [ ] `DATABASE_URL` set in Vercel + `.env.local` — **awaiting Alex**
+- [x] Drizzle ORM installed (`drizzle-orm`, `drizzle-kit`, `postgres`)
+- [x] `src/db/schema.ts` exists with the tables below
+- [ ] `pnpm db:push` runs and creates all tables — **awaiting DATABASE_URL**
+- [x] `src/db/index.ts` exports a typed `db` client usable from server components, route handlers, and server actions
+- [ ] A trivial server component or route can `SELECT 1` from the DB successfully on the deployed Vercel URL — **awaiting DATABASE_URL**
 
 ## Schema (locked)
 
