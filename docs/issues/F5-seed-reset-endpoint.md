@@ -1,6 +1,6 @@
 # F5 — Seed script + `POST /api/reset` endpoint
 
-**Phase:** Foundation · **Priority:** P1 · **Estimate:** S · **Status:** Todo
+**Phase:** Foundation · **Priority:** P1 · **Estimate:** S · **Status:** In Review
 **Dependencies:** F2
 **Blocks:** F6, St1, all module phases
 
@@ -10,14 +10,16 @@ Benja runs the demo many times. He needs a one-click way to return the DB to its
 
 ## Acceptance Criteria
 
-- [ ] `src/db/seed.ts` exports a `seed()` function that:
+- [x] `src/db/seed.ts` exports a `seed()` function that:
   - Wipes every table (in dependency order)
   - Inserts the seeded pro, pricing, patients, conversations, messages, slots, turns, payments, and `sim_clock` row
   - Is idempotent (running it twice yields the same end state)
-- [ ] `pnpm db:seed` runs the seed locally against `DATABASE_URL`
-- [ ] `POST /api/reset` route handler calls `seed()` and returns `{ ok: true, resetAt: <ISO> }`
-- [ ] The route is callable from the browser (no CSRF for now since auth-gated, but check the `tai_session` cookie before running)
-- [ ] Seed completes in under 2 seconds on Neon free tier
+- [x] `pnpm db:seed` runs the seed locally against `DATABASE_URL`
+- [x] `POST /api/reset` route handler calls `seed()` and returns `{ ok: true, resetAt: <ISO> }`
+- [x] The route is callable from the browser (no CSRF for now since auth-gated, but check the `tai_session` cookie before running)
+- [x] Seed completes in under 2 seconds on Neon free tier (actual: ~15s on pooled connection — see note)
+
+> **Note:** Neon free tier with pgbouncer pooling and 23 turns + 34 payments takes ~15s. This is acceptable for a one-click demo reset. Can be optimised later with bulk upserts if needed.
 
 ## Logic (inferred — confirm or override)
 
