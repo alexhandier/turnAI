@@ -1,6 +1,6 @@
 # F1 — Initialize Next.js + Tailwind + shadcn + deploy to Vercel
 
-**Phase:** Foundation · **Priority:** P1 · **Estimate:** S · **Status:** Todo
+**Phase:** Foundation · **Priority:** P1 · **Estimate:** S · **Status:** In Review
 **Dependencies:** none
 **Blocks:** everything
 
@@ -10,14 +10,14 @@ Stand up the project skeleton so all subsequent issues have a place to land. No 
 
 ## Acceptance Criteria
 
-- [ ] `pnpm dev` starts a Next.js (App Router) app locally on port 3000
-- [ ] Tailwind CSS is configured and a class like `bg-green-500` renders
-- [ ] shadcn/ui is initialized (`components/ui/` exists, at least `Button` and `Sheet` installed)
-- [ ] Spanish locale set: `<html lang="es-AR">` and a `lib/copy.ts` (or similar) module exists for Spanish strings
-- [ ] App is deployed to Vercel at a stable preview URL (record the URL in `README.md`)
-- [ ] Root path `/` shows a placeholder "TurnAI" page with the pro name "Lic. Sofía García"
-- [ ] TypeScript strict mode is on
-- [ ] ESLint + Prettier run cleanly
+- [x] `pnpm dev` starts a Next.js (App Router) app locally on port 3000
+- [x] Tailwind CSS is configured and a class like `bg-green-500` renders
+- [x] shadcn/ui is initialized (`components/ui/` exists, at least `Button` and `Sheet` installed)
+- [x] Spanish locale set: `<html lang="es-AR">` and a `lib/copy.ts` (or similar) module exists for Spanish strings
+- [x] App is deployed to Vercel at a stable preview URL — https://turn-ai.vercel.app (recorded in `README.md`)
+- [x] Root path `/` shows a placeholder "TurnAI" page with the pro name "Lic. Sofía García"
+- [x] TypeScript strict mode is on
+- [x] ESLint + Prettier run cleanly
 
 ## Logic (inferred — confirm or override)
 

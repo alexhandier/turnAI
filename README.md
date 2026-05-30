@@ -39,7 +39,7 @@ Copy `.env.local.example` to `.env.local` and fill in the required values before
 
 ## Deployment
 
-**Vercel preview URL:** _to be added after Vercel project import_
+**Vercel preview URL:** https://turn-ai.vercel.app
 
 The app is deployed on Vercel. Environment variables (`DATABASE_URL`, etc.) are managed via Vercel's dashboard.
 
