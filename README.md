@@ -37,6 +37,15 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 Copy `.env.local.example` to `.env.local` and fill in the required values before running (see F2 for DB setup).
 
+### Demo login
+
+| Field | Value |
+|---|---|
+| Usuario | `benja` |
+| Contraseña | `turnai2026` |
+
+The pro view is at `/app/agenda`. The patient booking page is at `/book/[link]` (no login required).
+
 ## Deployment
 
 **Vercel preview URL:** https://turn-ai.vercel.app

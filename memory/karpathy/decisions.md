@@ -2,6 +2,11 @@
 
 > Append-only. Newest at the top.
 
+## 2026-05-30 — dotenv-cli for db:* scripts
+
+**Decision:** Added `dotenv-cli` dev dependency; db:push/generate/studio scripts use `dotenv -e .env.local -- drizzle-kit <cmd>`.
+**Rationale:** drizzle-kit doesn't auto-load .env.local (only .env). Next.js handles .env.local for pnpm dev, but drizzle-kit runs outside Next.js. dotenv-cli is the standard one-liner fix without requiring code changes in drizzle.config.ts.
+
 ## 2026-05-30 — shadcn toast → sonner
 
 **Decision:** Used `sonner` component instead of `toast` (deprecated in shadcn).

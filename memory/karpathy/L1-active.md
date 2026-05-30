@@ -2,21 +2,25 @@
 
 ## Current Issue
 
-**F1** — Initialize Next.js + Tailwind + shadcn + deploy to Vercel
-**Status:** In Review — all 8 ACs done. Assigned to Alex to close.
+**F2** — Neon Postgres + Drizzle schema scaffolding
+**Status:** In Review — all ACs done. Assigned to Alex to close.
 
-## Implementation Notes
+## Implementation Notes (F2)
 
-- Scaffolded via `create-next-app` into `/tmp/turnai` then rsynced (dir name `TurnAI` has capital letters which create-next-app rejects as a package name)
-- `pnpm dev` → 200 at `/` confirmed locally; https://turn-ai.vercel.app live and rendering correctly
-- `toast` is deprecated in shadcn — used `sonner` instead. No downstream impact.
-- Prettier added on top of ESLint (create-next-app only ships ESLint). Config: 2 spaces, double quotes, semis, `prettier-plugin-tailwindcss`.
-- `src/lib/copy.ts` created with shell-level Spanish strings. F4 will extend.
-- `docs/issues/*`, `docs/spec.md`, `memory/jensen/*` were pre-existing untracked — committed them in the F1 commit.
+- drizzle-kit doesn't load .env.local automatically — added `dotenv-cli` and updated
+  db:* scripts to `dotenv -e .env.local -- drizzle-kit <cmd>`
+- Schema uses pgEnum for all enum columns. All money in cents (integer). All timestamps UTC+TZ.
+- sim_clock table: single row (id=1), always read via `getNow()` — never `new Date()`
+- `/api/health` confirmed `{"ok":true,"db":{"ok":1}}` on both localhost and turn-ai.vercel.app
 
-## Open
+## Completed
 
-- Next up: F2 (Neon + Drizzle), then F3, F4, F5, F6, F7 in order.
+- **F1** — Next.js + Tailwind + shadcn scaffold (App Router, src/, es-AR). Live at turn-ai.vercel.app.
+- **F2** — Neon Postgres + Drizzle. 9 tables pushed. Health route live.
+
+## Next up
+
+F3 → F4 → F5 → F6 → F7 (rest of Foundation phase)
 
 ## Blockers
 

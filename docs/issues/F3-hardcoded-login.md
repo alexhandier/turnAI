@@ -1,6 +1,6 @@
 # F3 — Hardcoded `benja` login + protect `/app/*` routes
 
-**Phase:** Foundation · **Priority:** P1 · **Estimate:** XS · **Status:** Todo
+**Phase:** Foundation · **Priority:** P1 · **Estimate:** XS · **Status:** In Review
 **Dependencies:** F1
 **Blocks:** all `/app/*` issues
 
@@ -10,12 +10,12 @@ Benja needs to log in to demo the app. No real auth. One account, hardcoded cred
 
 ## Acceptance Criteria
 
-- [ ] Visiting `/app/*` while unauthenticated redirects to `/login`
-- [ ] `/login` shows a minimal form: usuario + contraseña + "Ingresar" button
-- [ ] Submitting `benja` / `turnai2026` (or chosen password — document in `README.md`) sets a signed httpOnly cookie and redirects to `/app/agenda`
-- [ ] Wrong credentials show "Credenciales incorrectas"
-- [ ] Logged-in user header link "Cerrar sesión" clears the cookie and returns to `/login`
-- [ ] `/book/[link]` is publicly accessible (no auth check)
+- [x] Visiting `/app/*` while unauthenticated redirects to `/login`
+- [x] `/login` shows a minimal form: usuario + contraseña + "Ingresar" button
+- [x] Submitting `benja` / `turnai2026` sets a signed httpOnly cookie and redirects to `/app/agenda` — documented in `README.md`
+- [x] Wrong credentials show "Credenciales incorrectas"
+- [x] Logged-in user header link "Cerrar sesión" clears the cookie and returns to `/login`
+- [x] `/book/[link]` is publicly accessible (no auth check — middleware only matches `/app/:path*`)
 
 ## Logic (inferred — confirm or override)
 
