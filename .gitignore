@@ -75,3 +75,7 @@ data/
 .scratch/
 tmp/
 *.tmp
+
+# TypeScript / Next.js build artifacts
+*.tsbuildinfo
+next-env.d.ts

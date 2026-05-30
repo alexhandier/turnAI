@@ -26,13 +26,33 @@ Patient needs help
                 if no, deposit retained
 ```
 
-## Status
-
-**2026-05-30** — Pre-alpha. Repo initialized. Thesis captured. No code yet. Stack to be chosen.
-
 ## Local Development
 
-To be filled in once a stack is chosen.
+```bash
+pnpm install
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+Copy `.env.local.example` to `.env.local` and fill in the required values before running (see F2 for DB setup).
+
+## Deployment
+
+**Vercel preview URL:** _to be added after Vercel project import_
+
+The app is deployed on Vercel. Environment variables (`DATABASE_URL`, etc.) are managed via Vercel's dashboard.
+
+## Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Styling:** Tailwind CSS 4 + shadcn/ui
+- **Database:** Neon Postgres via Drizzle ORM
+- **Hosting:** Vercel
+
+## Status
+
+**2026-05-30** — F1 complete. Next.js scaffold live. Database and auth pending (F2, F3).
 
 ## License
 
