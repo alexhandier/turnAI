@@ -1,6 +1,6 @@
 # F2 — Provision Neon Postgres + Drizzle schema scaffolding
 
-**Phase:** Foundation · **Priority:** P1 · **Estimate:** S · **Status:** In Review (awaiting Neon provisioning)
+**Phase:** Foundation · **Priority:** P1 · **Estimate:** S · **Status:** In Review
 **Dependencies:** F1
 **Blocks:** F3, F5, F6, all module phases
 
@@ -10,13 +10,13 @@ We need a persistent database from day one because the demo's magic moment is *t
 
 ## Acceptance Criteria
 
-- [ ] Neon Postgres project provisioned (via Vercel Marketplace for one-click env vars) — **awaiting Alex**
-- [ ] `DATABASE_URL` set in Vercel + `.env.local` — **awaiting Alex**
+- [x] Neon Postgres project provisioned (via Vercel Marketplace for one-click env vars)
+- [x] `DATABASE_URL` set in Vercel + `.env.local`
 - [x] Drizzle ORM installed (`drizzle-orm`, `drizzle-kit`, `postgres`)
 - [x] `src/db/schema.ts` exists with the tables below
-- [ ] `pnpm db:push` runs and creates all tables — **awaiting DATABASE_URL**
+- [x] `pnpm db:push` runs and creates all tables
 - [x] `src/db/index.ts` exports a typed `db` client usable from server components, route handlers, and server actions
-- [ ] A trivial server component or route can `SELECT 1` from the DB successfully on the deployed Vercel URL — **awaiting DATABASE_URL**
+- [x] `GET /api/health` returns `{"ok":true,"db":{"ok":1}}` locally and on turn-ai.vercel.app
 
 ## Schema (locked)
 
