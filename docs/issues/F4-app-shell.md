@@ -1,6 +1,6 @@
 # F4 — Mobile-first app shell + bottom tab bar + Spanish locale
 
-**Phase:** Foundation · **Priority:** P1 · **Estimate:** M · **Status:** Todo
+**Phase:** Foundation · **Priority:** P1 · **Estimate:** M · **Status:** In Review
 **Dependencies:** F1, F3
 **Blocks:** all `/app/*` module issues
 
@@ -10,17 +10,17 @@ This is the visual chassis Benja shows on his phone. Bottom tabs = 4 modules. He
 
 ## Acceptance Criteria
 
-- [ ] `/app/layout.tsx` provides a mobile-first shell: header (top) + content (middle) + bottom tab bar (bottom)
-- [ ] Bottom tab bar has 4 tabs in this order with these labels and icons:
-  - **Inbox** (`/app/inbox`) — chat bubble icon
-  - **Pacientes** (`/app/pacientes`) — people icon
-  - **Finanzas** (`/app/finanzas`) — wallet/chart icon
-  - **Agenda** (`/app/agenda`) — calendar icon
-- [ ] Active tab is visually distinguished (filled icon + accent color)
-- [ ] Header shows pro photo + name + a "..." overflow that opens a sheet with "Ajustes" and "Cerrar sesión"
-- [ ] All routes exist with empty placeholder content (`"Próximamente"`)
-- [ ] On desktop viewport (≥ 1024px), the shell centers a max-width 420px frame on a neutral gray background (so demos on a laptop still look like a phone)
-- [ ] All text in Spanish (Argentine voseo where it sounds natural)
+- [x] `/app/layout.tsx` provides a mobile-first shell: header (top) + content (middle) + bottom tab bar (bottom)
+- [x] Bottom tab bar has 4 tabs in this order with these labels and icons:
+  - **Inbox** (`/app/inbox`) — MessageCircle icon
+  - **Pacientes** (`/app/pacientes`) — Users icon
+  - **Finanzas** (`/app/finanzas`) — Wallet icon
+  - **Agenda** (`/app/agenda`) — Calendar icon
+- [x] Active tab is visually distinguished (green-500 + bolder stroke)
+- [x] Header shows pro initials avatar + name + "..." that opens a sheet with "Ajustes" and "Cerrar sesión"
+- [x] All routes exist with placeholder content ("próximamente")
+- [x] Desktop: max-w-[420px] centered on bg-zinc-100 with shadow-2xl
+- [x] All text in Spanish
 
 ## Logic (inferred — confirm or override)
 

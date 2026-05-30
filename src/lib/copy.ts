@@ -22,5 +22,6 @@ export const copy = {
     confirm: "Confirmar",
     back: "Volver",
     send: "Enviar",
+    logout: "Cerrar sesión",
   },
 } as const;
